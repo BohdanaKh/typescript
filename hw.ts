@@ -42,14 +42,14 @@ interface ICores {
             reuse_count: number,
             status: string
         }
-}[];
+}
 
 interface IPayloads {
 
     payload_type: string,
         payload_mass_kg: number,
     payload_mass_lbs: number
-}[];
+}
 
 
 interface IMission{
@@ -64,55 +64,17 @@ interface IMission{
             };
     rocket: {
         rocket_name: string,
-        first_stage: {cores: ICores
+        first_stage: {cores: ICores[]
             
 },
         second_stage: {
-            payloads:IPayloads
+            payloads:IPayloads[]
 
         }
     }
 }
 
 
-
-const coresObj:ICores = {
-                "flight": 7,
-                "core": {
-                    "reuse_count": 6,
-                    "status": "unknown"
-                }
-            }
-
-   const payloadsObj:IPayloads = {
-                "payload_type": "Satellite",
-                "payload_mass_kg": 15400,
-                "payload_mass_lbs": 33951.2
-            }
-
-
-const missionInf:IMission={
-    mission_name: "Starlink-15 (v1.0)",
-    launch_date_local: "2020-10-24T11:31:00-04:00",
-    launch_site: {
-    "site_name_long": "Cape Canaveral Air Force Station Space Launch Complex 40"
-},
-    links: {
-    article_link: "http://some.com",
-        video_link: "https://youtu/J442-ti-Dhg"
-},
-    rocket: {
-        rocket_name: "Falcon 9",
-        first_stage: {
-            cores: coresObj
-        },
-        second_stage: {
-            payloads:payloadsObj
-            
-        }
-    }
-}
-console.log(missionInf);
 // ---------------------------------------------------------------------------—————————
 // 2) протипізувати функції:
 
@@ -140,18 +102,13 @@ function showSum(a:number,b:number):void{
 //     return someUser
 // }
 
-
-
 // const user = {
 //     name:"Max",
 //     age:18,
 //     gender:'male'
 // }
 //
-// function incAge(someUser, inc:number):object{
-//     someUser.age+=inc;
-//     return someUser;
-// }
+
 
 
 interface IUser {
